@@ -9,6 +9,9 @@ from keras.applications.inception_v3 import InceptionV3, preprocess_input as inc
 from keras.applications.xception import Xception, preprocess_input as xception_preprocess
 from keras.applications.nasnet import NASNetLarge, preprocess_input as nasnet_preprocess
 from keras.layers.merge import concatenate
+from tensorflow.keras.layers import Dense, GlobalAveragePooling2D, Lambda, Dropout, InputLayer, Input
+from tensorflow.keras.layers import BatchNormalization
+from tensorflow.keras.models import Model
 from feature_extractor import extractor_model
 
 with open(r'static\dog_breeds_category.pickle', 'rb') as handle:
