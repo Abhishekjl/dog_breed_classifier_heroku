@@ -1,26 +1,22 @@
-import tensorflow 
-from tensorflow import keras 
+import tensorflow as tf
 from tensorflow.keras.models import load_model
 import cv2
 import os
 import numpy as np
 import pickle
 import pandas as pd
-from keras.applications.inception_resnet_v2 import InceptionResNetV2, preprocess_input as resnet_preprocess
-from keras.applications.inception_v3 import InceptionV3, preprocess_input as inception_preprocess
-from keras.applications.xception import Xception, preprocess_input as xception_preprocess
-from keras.applications.nasnet import NASNetLarge, preprocess_input as nasnet_preprocess
-from keras.layers.merge import concatenate
-from tensorflow.keras.layers import Dense, GlobalAveragePooling2D, Lambda, Dropout, InputLayer, Input
-from tensorflow.keras.layers import BatchNormalization
-from tensorflow.keras.models import Model
+from tensorflow.keras.applications.inception_resnet_v2 import InceptionResNetV2, preprocess_input as resnet_preprocess
+from tensorflow.keras.applications.inception_v3 import InceptionV3, preprocess_input as inception_preprocess
+from tensorflow.keras.applications.xception import Xception, preprocess_input as xception_preprocess
+from tensorflow.keras.applications.nasnet import NASNetLarge, preprocess_input as nasnet_preprocess
+from tensorflow.keras.layers import concatenate
 from feature_extractor import extractor_model
 
 with open(r'static\dog_breeds_category.pickle', 'rb') as handle:
     dog_breeds = pickle.load(handle)
 # print(dog_breeds)    
 
-feature_extractor_path = r'static\feature_extractor.h5'
+# feature_extractor_path = r'static\feature_extractor.h5'
 model_path = r'static\dogbreed.h5'
 
 feature_extractor_model = extractor_model()
