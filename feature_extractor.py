@@ -1,11 +1,4 @@
-from keras.applications.inception_resnet_v2 import InceptionResNetV2, preprocess_input as resnet_preprocess
-from keras.applications.inception_v3 import InceptionV3, preprocess_input as inception_preprocess
-from keras.applications.xception import Xception, preprocess_input as xception_preprocess
-from keras.applications.nasnet import NASNetLarge, preprocess_input as nasnet_preprocess
-from keras.layers.merge import concatenate
-from tensorflow.keras.layers import Dense, GlobalAveragePooling2D, Lambda, Dropout, InputLayer, Input
-from tensorflow.keras.layers import BatchNormalization
-from tensorflow.keras.models import Model
+
 
 def extractor_model():
     input_shape = (331,331,3)
