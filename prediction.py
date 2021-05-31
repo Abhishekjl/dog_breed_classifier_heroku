@@ -15,7 +15,7 @@ with open(r'static\dog_breeds_category.pickle', 'rb') as handle:
     dog_breeds = pickle.load(handle)
 # print(dog_breeds)    
 
-feature_extractor_path = r'static\feature_extractor.h5'
+# feature_extractor_path = r'static\feature_extractor.h5'
 model_path = r'static\dogbreed.h5'
 
 feature_extractor_model = extractor_model()
