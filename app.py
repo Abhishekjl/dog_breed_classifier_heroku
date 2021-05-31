@@ -3,8 +3,9 @@ import os
 app = Flask(__name__)
 import pandas as pd
 from prediction import predictor
+current_path = os.getcwd()
 
-app.config['IMAGE_FOLDER'] = r"static\images"
+app.config['IMAGE_FOLDER'] = os.path.join(current_path,'\static\images')
 
 @app.route('/')
 def hello_world():
