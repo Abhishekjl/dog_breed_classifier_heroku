@@ -11,8 +11,8 @@ from tensorflow.keras.applications.nasnet import NASNetLarge, preprocess_input a
 from feature_extractor import extractor_model
 from tensorflow.keras.preprocessing.image import load_img,img_to_array
 current_path = os.getcwd()
-dog_breeds_category_path = os.path.join(current_path, 'static\dog_breeds_category.pickle')
-model_path = os.path.join(current_path,'static\dogbreed.h5')
+dog_breeds_category_path = os.path.join(current_path, 'static/dog_breeds_category.pickle')
+model_path = os.path.join(current_path,'static/dogbreed.h5')
 with open(dog_breeds_category_path, 'rb') as handle:
     dog_breeds = pickle.load(handle)
 # print(dog_breeds)    
@@ -24,7 +24,7 @@ predictor_model = load_model(model_path)
 # print(predictor.summary())
 
 def predictor(image_name): # here image is file name 
-    base_path = os.path.join(current_path, 'static\images')
+    base_path = os.path.join(current_path, 'static/images')
     path = os.path.join(base_path,image_name)
     img = load_img(path, target_size=(331,331))
     # print(path)
